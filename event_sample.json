@@ -1,0 +1,10 @@
+ {
+  "Records": [
+    {
+      "Sns": {
+        "Message": "{\"logGroup\":\"/aws/lambda/my-function\",\"logStream\":\"2025/08/07/[$LATEST]12345abcdef\",\"trigger\":{\"metricName\":\"Errors\",\"threshold\":1}}"
+      }
+    }
+  ]
+}
+

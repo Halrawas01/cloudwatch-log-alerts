@@ -1,0 +1,10 @@
+ 
+{
+  "Records": [
+    {
+      "Sns": {
+        "Message": "{\"alarmName\": \"High CPU Usage\", \"state\": \"ALARM\", \"description\": \"CPU usage exceeded threshold\"}"
+      }
+    }
+  ]
+}
