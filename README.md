@@ -22,3 +22,8 @@ def lambda_handler(event, context):
     for record in event['Records']:
         message = record['Sns']['Message']
         print("ALERT:", message)
+
+[event_sample.json](https://github.com/user-attachments/files/21654269/event_sample.json)
+[test_event.json](https://github.com/user-attachments/files/21654268/test_event.json)
+[requirements.txt](https://github.com/user-attachments/files/21654267/requirements.txt)
+[README.md](https://github.com/user-attachments/files/21654266/README.md)
