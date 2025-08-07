@@ -1,28 +1,24 @@
-\# CloudWatch Log Alert Lambda
+# CloudWatch Log Alert Lambda
 
+This project contains an AWS Lambda function designed to listen to CloudWatch log alerts, process them, and send structured notifications via Amazon SNS. It provides a lightweight, real-time monitoring solution suitable for DevOps and security teams.
 
+## What It Does
 
-Simple AWS Lambda function that listens to CloudWatch log alerts via SNS and prints useful info for monitoring.
+The Lambda function is triggered by CloudWatch Logs, extracts useful information from incoming alerts, and delivers a readable message to an SNS topic. This enables teams to stay updated on key issues such as:
 
+- Unauthorized access attempts  
+- EC2 instance failures  
+- Application-level errors and exceptions  
 
+All without logging into the AWS console.
 
-\## Files
+### Sample Code Logic
 
-\- `lambda\_function.py`: AWS Lambda code
+```python
+import boto3
+import json
 
-\- `event\_sample.json`: Sample test event
-
-\- `requirements.txt`: Package needed for AWS interaction (boto3)
-
-
-
-\## How to Use
-
-1\. Deploy this Lambda in AWS
-
-2\. Subscribe it to an SNS topic triggered by a CloudWatch alarm
-
-3\. Test with the sample JSON event or real logs
-
-
-
+def lambda_handler(event, context):
+    for record in event['Records']:
+        message = record['Sns']['Message']
+        print("ALERT:", message)
